@@ -1,7 +1,7 @@
 # Music-management-program
 삼육대 모바일 프로그래밍 프로젝트
 
-<img src="docs/사진/메인화면2.png" style="height:400px"/> 
+<img src="docs/사진/메인화면2.png" style="height:450px"/> 
 <br/>
 
 ## 프로젝트 개요
