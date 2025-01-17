@@ -1,0 +1,1 @@
+<option value="">전체</option><option value="6520000">서귀포시</option><option value="6510000">제주시</option><option value="6500000">제주특별자치도</option>

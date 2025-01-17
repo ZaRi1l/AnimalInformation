@@ -1,0 +1,1 @@
+<option value="">전체</option><option value="3680000">대덕구</option><option value="3640000">동구</option><option value="3660000">서구</option><option value="3670000">유성구</option><option value="3650000">중구</option>

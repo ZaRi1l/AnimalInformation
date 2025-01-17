@@ -1,0 +1,1 @@
+<option value="">전체</option><option value="5690000">세종특별자치시</option>

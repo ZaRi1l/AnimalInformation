@@ -1,0 +1,1 @@
+<option value="">전체</option><option value="3440000">남구</option><option value="3470000">달서구</option><option value="3480000">달성군</option><option value="3420000">동구</option><option value="3450000">북구</option><option value="3430000">서구</option><option value="3460000">수성구</option><option value="3410000">중구</option>

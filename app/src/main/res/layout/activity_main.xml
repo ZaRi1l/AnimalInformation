@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- 로고와 전화번호 -->
+    <LinearLayout
+        android:layout_weight="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        tools:ignore="MissingConstraints"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo2"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="right">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/call"
+                android:layout_weight="2"
+                android:paddingLeft="20dp"
+                android:paddingTop="3dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1577-0945"
+                android:textSize="25dp"
+                android:textColor="@color/blue"
+                android:layout_weight="1"
+                android:gravity="top"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 검색창 -->
+    <LinearLayout
+        android:layout_weight="0.01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border_layout_blue"
+        android:padding="10dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:columnCount="4"
+            android:rowCount="2">
+            <TextView
+                android:layout_column="0"
+                android:layout_row="0"
+                android:text="동물등록번호 "
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                />
+            <EditText
+                android:id="@+id/editSearch"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_columnSpan="2"
+                android:layout_columnWeight="2"
+                android:text="검색"
+                android:textSize="25dp"
+                android:textColor="@color/gray"/>
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_column="3"
+                android:layout_row="0"
+                android:backgroundTint="@color/black_blue"
+                android:text="조회"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"
+                />
+            <Button
+                android:id="@+id/btnDetail"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_columnSpan="4"
+                android:layout_columnWeight="4"
+                android:backgroundTint="@color/black_blue"
+                android:textSize="20dp"
+                android:text="상세 검색"
+                android:textColor="@color/white"
+                />
+        </GridLayout>
+        <GridLayout
+            android:id="@+id/gridDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:columnCount="4"
+            android:rowCount="9"
+            android:visibility="gone">
+            <TextView
+                android:layout_column="0"
+                android:layout_row="0"
+                android:text="날짜"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:textStyle="bold"
+                android:layout_columnWeight="1"
+                android:gravity="center"/>
+            <EditText
+                android:id="@+id/editDate1"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="2"
+                android:text="2023-04-12"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnDate1"
+                android:layout_column="2"
+                android:layout_row="0"
+                android:text="🗓"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/black_blue"
+                />
+            <EditText
+                android:id="@+id/editDate2"
+                android:layout_column="1"
+                android:layout_row="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:text="2023-05-12"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnDate2"
+                android:layout_column="2"
+                android:layout_row="1"
+                android:text="🗓"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/black_blue"
+                />
+            <TextView
+                android:layout_column="0"
+                android:layout_row="3"
+                android:layout_columnSpan="1"
+                android:text="시도"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:layout_columnWeight="1"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnCity1"
+                android:layout_column="1"
+                android:layout_row="3"
+                android:layout_columnSpan="2"
+                android:text="전체"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:backgroundTint="@color/white"
+                android:layout_columnWeight="1"
+                android:gravity="left"/>
+            <TextView
+                android:layout_column="0"
+                android:layout_row="4"
+                android:layout_columnSpan="1"
+                android:text="시군구"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:layout_columnWeight="1"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnCity2"
+                android:layout_column="1"
+                android:layout_row="4"
+                android:layout_columnSpan="2"
+                android:text="전체"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:backgroundTint="@color/white"
+                android:layout_columnWeight="1"
+                android:gravity="left"/>
+            <TextView
+                android:layout_column="0"
+                android:layout_row="5"
+                android:layout_columnSpan="1"
+                android:text="보호센터"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:layout_columnWeight="1"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnProtect"
+                android:layout_column="1"
+                android:layout_row="5"
+                android:layout_columnSpan="2"
+                android:text="전체"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:backgroundTint="@color/white"
+                android:layout_columnWeight="1"
+                android:gravity="left"/>
+            <TextView
+                android:layout_column="0"
+                android:layout_row="6"
+                android:layout_columnSpan="1"
+                android:text="축종"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:layout_columnWeight="1"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnSpecies1"
+                android:layout_column="1"
+                android:layout_row="6"
+                android:layout_columnSpan="2"
+                android:text="전체"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:backgroundTint="@color/white"
+                android:layout_columnWeight="1"
+                android:gravity="left"/>
+            <Button
+                android:id="@+id/btnSpecies2"
+                android:layout_column="0"
+                android:layout_row="7"
+                android:layout_columnSpan="4"
+                android:layout_columnWeight="4"
+                android:text="전체"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:backgroundTint="@color/white"
+                android:gravity="left"
+                />
+            <TextView
+                android:layout_column="0"
+                android:layout_row="8"
+                android:layout_columnSpan="1"
+                android:text="성별"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+                android:layout_columnWeight="1"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/btnSex"
+                android:layout_column="1"
+                android:layout_row="8"
+                android:layout_columnSpan="2"
+                android:text="전체"
+                android:textSize="25dp"
+                android:textColor="@color/gray"
+                android:backgroundTint="@color/white"
+                android:layout_columnWeight="1"
+                android:gravity="left"/>
+        </GridLayout>
+    </LinearLayout>
+
+    <!-- 중앙화면 -->
+    <ScrollView
+        android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="10"
+            android:columnCount="1">
+
+            <!--0번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti0"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first0"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--1번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti1"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first1"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--2번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti2"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first2"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--3번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti3"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first3"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--4번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti4"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first4"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--5번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti5"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first5"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--6번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti6"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first6"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--7번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti7"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first7"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--8번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti8"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first8"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+
+
+
+            <!--9번-->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:orientation="vertical"
+                android:background="@drawable/border_layout_skyblue"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:id="@+id/firsti9"
+                    android:layout_width="140dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/cat"
+                    android:scaleType="fitXY"/>
+                <android.widget.Button
+                    android:layout_gravity="center"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:backgroundTint="@color/black_blue"
+                    android:text="자세히보기"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"/>
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:columnCount="2"
+                    android:rowCount="6"
+                    android:layout_rowSpan="2">
+                    <TextView android:textSize="20dp" android:text="접수일자 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="품종 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="성별 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="발견장소 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="특징 " android:textColor="@color/black"/>
+                    <TextView android:textSize="20dp" android:text="형태 " android:textColor="@color/black"/>
+                    <TextView android:id="@+id/first9"
+                        android:layout_width="wrap_content"
+                        android:layout_rowSpan="6"
+                        android:textSize="20.76dp"
+                        android:text="내용"
+                        android:textColor="@color/gray"
+                        />
+                </GridLayout>
+            </GridLayout>
+        </GridLayout>
+    </ScrollView>
+
+
+<!--아래 구현-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dp"
+        >
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="1"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="2"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="3"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="4"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="5"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="6"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="7"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="8"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="9"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+        <android.widget.Button
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="10"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/border_layout_blue2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="연락번호 : 010-xxxx-xxxx\n국가동물보호정보시스템 사이트"
+            android:textColor="@color/gray"/>
+    </LinearLayout>
+</LinearLayout>
